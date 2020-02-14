@@ -1,4 +1,4 @@
-package services;
+package commands;
 
 import notification.Notification;
 import notification.NotificationFactory;
@@ -6,7 +6,7 @@ import models.User;
 
 import java.util.List;
 
-public class AlertCommand {
+public class AlertCommand implements Command {
     private String app;
     private List<User> users;
 
@@ -15,9 +15,10 @@ public class AlertCommand {
         this.users = users;
     }
 
+    @Override
     public void execute() {
         for (User user : users) {
-           notify(user);
+            notify(user);
         }
     }
 
