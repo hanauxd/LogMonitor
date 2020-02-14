@@ -1,4 +1,4 @@
-package repositories.alertConfig;
+package repositories.configuration;
 
 import com.google.gson.Gson;
 import models.Configuration;

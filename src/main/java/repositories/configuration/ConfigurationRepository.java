@@ -1,4 +1,4 @@
-package repositories.alertConfig;
+package repositories.configuration;
 
 import models.Configuration;
 

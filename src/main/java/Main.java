@@ -1,5 +1,5 @@
 import models.Configuration;
-import repositories.alertConfig.FileConfigurationRepository;
+import repositories.configuration.FileConfigurationRepository;
 import services.LogMonitor;
 
 import java.util.List;
