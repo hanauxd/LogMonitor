@@ -9,10 +9,12 @@ import java.util.List;
 public class AlertCommand implements Command {
     private String app;
     private List<User> users;
+    private NotificationFactory notificationFactory;
 
     public AlertCommand(String app, List<User> users) {
         this.app = app;
         this.users = users;
+        this.notificationFactory = new NotificationFactory();
     }
 
     @Override
@@ -25,7 +27,7 @@ public class AlertCommand implements Command {
     private void notify(User user) {
         List<String> notificationTypes = user.getNotificationTypes();
         for (String type : notificationTypes) {
-            Notification notification = new NotificationFactory().getInstance(type, user, app);
+            Notification notification = notificationFactory.getInstance(type, user, app);
             notification.send();
         }
     }
